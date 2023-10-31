@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    //eliminar layout compartido
+    //Layout = null;
+    ViewData["Title"] = "Home page";
+}
+
+<div class="alert alert-primary text-center fw-bold">
+    <h1 class="display-4">Welcome</h1>
+    <a asp-page="Survey">Enter the survey!</a>
+</div>
+
+    <div class="text-center">
+        <img src="~/img/surv-ind.png" class="w-25 h-25" asp-append-version="true" />
+    </div>

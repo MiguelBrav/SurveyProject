@@ -1,0 +1,33 @@
+﻿@page
+@model ResultsModel
+@{
+    ViewData["Title"] = "Results";
+}
+<h1 class="text-primary">@ViewData["Title"]</h1>
+
+<h2>Results for the survey</h2>
+<div class="row">
+    <div class="col text-center">
+        <table class="table table-bordered">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>¿Do you like home office?</th>
+                    <th>Descriptions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var survey in Model.surveys)
+                {
+                string answer = @survey.IsTrue ? "Yes" : "No";
+                <tr>
+                    <td>@survey.Name</td>
+                    <td>@answer</td>
+                    <td>@survey.Description</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <a class="btn btn-primary" asp-page="Index">Go back</a>
+    </div>
+</div>
